@@ -40,3 +40,55 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2020-12-31 20:00:58 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /home/jramriez/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jramriez/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (6.0ms)
+Completed 200 OK in 53ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-12-31 20:01:09 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 397ms (Views: 378.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-31 20:01:19 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fFnVrmFfR5awsnEqvFVWd0/fxe5Txw2grNIgxgvRgPkkiMT7svHHjolnvZwf2bVghq6bPwtc5oWrl/6h7Py8UA==", "title"=>"candy", "description"=>"i like candy", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (7.3ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "candy"], ["description", "i like candy"], ["created_at", "2021-01-01 04:01:19.088062"], ["updated_at", "2021-01-01 04:01:19.088062"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 168ms (ActiveRecord: 12.8ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-12-31 20:01:58 -0800
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 36.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-12-31 20:02:08 -0800
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qykj6iu0c+HFomFEvvc2C61B9r7bw5OFcvSPsdmJ9i/z+DK/+Brz+fx3rfIde9UcZDCob4NYeKB1sVHWPqTKhg==", "title"=>"ca", "description"=>"i love living in ca", "commit"=>"Submit Post"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "ca"], ["description", "i love living in ca"], ["created_at", "2021-01-01 04:02:08.828770"], ["updated_at", "2021-01-01 04:02:08.828770"]]
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 11ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/posts/3" for 127.0.0.1 at 2020-12-31 20:02:08 -0800
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 42ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
