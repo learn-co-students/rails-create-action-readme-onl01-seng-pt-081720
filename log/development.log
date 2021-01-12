@@ -40,3 +40,251 @@ Processing by PostsController#show as HTML
   [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered posts/show.html.erb within layouts/application (0.4ms)
 Completed 200 OK in 27ms (Views: 10.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (17.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Title Goes Here"], ["description", "Desc goes here"], ["created_at", "2021-01-11 18:43:45.010319"], ["updated_at", "2021-01-11 18:43:45.010319"]]
+  [1m[35m (18.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Started GET "/" for ::1 at 2021-01-11 14:51:53 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (5.5ms)
+Completed 200 OK in 191ms (Views: 78.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-01-11 14:52:01 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/railties-5.0.7.2/lib/rails/templates/rails/welcome/index.html.erb (3.8ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-11 14:52:21 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 808ms (Views: 782.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 14:52:39 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yJ2XThgh6fgCb93OxTU5Ook0FKGzOCBCecsEBy4IdhYMuEXLX9Tgen5ozWH/Rj/XPCoEV2f0BZP5JWG/OrNERQ==", "title"=>"big sister", "description"=>"my sisters keeper\r\n", "commit"=>"Submit Post"}
+  [1m[36mPost Load (12.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `title=' for #<Post::ActiveRecord_Relation:0x00007fde7311c390>):
+  
+app/controllers/posts_controller.rb:16:in `create'
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.6ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.9ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (76.9ms)
+Started GET "/posts/new" for ::1 at 2021-01-11 21:39:00 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 373ms (Views: 354.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:39:24 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dxrTC0QRJwrG0Nute0c5DYyKuPKoTuPvGb7EPAO7qUOzPwGOA+QuiLrXywJBND/gOZSoBHyCxj6ZUKGEFwCbEA==", "title"=>"babies", "description"=>"stages and tantrums", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 179ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-11 21:39:54 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 140ms (Views: 122.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:40:03 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"l42/gm5Ja7s3GdcU7TApVFUBQYuaOfKn6supN3ziHl5TqG0HKbxiOUsex7vXQy+54B9RfU7113ZqJcyPaFksDQ==", "title"=>"mom", "description"=>"jfkalsdhf;oisdafh", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 59ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-11 21:41:51 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 45ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:42:03 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (79.9ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (103.8ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (256.9ms)
+Started GET "/posts/new" for ::1 at 2021-01-11 21:42:42 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 31.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:42:57 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G1tFtik6y5/5CU2QozE4lCZAPazNUyKSwNkOaurt+ILffpczbs/CHYUOXT+ZQj55k14tWhmfB0NAN2vS/lbK0Q==", "title"=>"big sister", "description"=>"descr", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 84ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-11 21:44:07 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 40ms (Views: 26.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:44:19 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/posts"):
+  
+actionpack (5.0.7.2) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.0.7.2) lib/rails/engine.rb:522:in `call'
+rack (2.2.3) lib/rack/handler/webrick.rb:95:in `service'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:140:in `service'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/httpserver.rb:96:in `run'
+/Users/user1/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/webrick/server.rb:307:in `block in start_thread'
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered collection of /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_route.html.erb [3 times] (1.7ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.7ms)
+Started GET "/posts/new" for ::1 at 2021-01-11 21:46:58 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 208ms (Views: 197.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-11 21:47:27 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uwC6oxMEVVprTtpdjrEJV85PMsFBIDzxQMnSL20UpYN/JWgmVPFc2BdJyvK0wg+6e1EiN5XsGSDAJ7eXea+X0A==", "title"=>"mom", "description"=>"mom duties", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 127ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-12 09:04:46 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 222ms (Views: 193.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-12 09:05:57 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 502ms (Views: 449.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-12 09:06:19 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"STlpfJx+Npm39/OR0O9YSTn8iVOgkxVkReJkoiGANi6NHLv524s/G8vw4z7qnF6kjOKZpXRfMLXFDAEaNTsEfQ==", "title"=>"name", "description"=>"meaningful names\r\n", "commit"=>"Submit Post"}
+No template found for PostsController#create, rendering head :no_content
+Completed 204 No Content in 172ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2021-01-12 09:06:58 -0500
+  
+SyntaxError (/Users/user1/Development/code/rails-create-action-readme-onl01-seng-pt-081720/app/controllers/posts_controller.rb:22: unterminated string meets end of file
+/Users/user1/Development/code/rails-create-action-readme-onl01-seng-pt-081720/app/controllers/posts_controller.rb:22: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/posts_controller.rb:22: unterminated string meets end of file
+app/controllers/posts_controller.rb:22: syntax error, unexpected end-of-input, expecting end
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendering /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/user1/.rvm/gems/ruby-2.6.1/gems/actionpack-5.0.7.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.2ms)
+Started GET "/posts/new" for ::1 at 2021-01-12 09:07:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 370ms (Views: 346.0ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/posts" for ::1 at 2021-01-12 09:07:56 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WMP9HEAkC/pSpQ4DPpbRrcLPwoUGtJYhRsaKyj6kgGyc5i+ZB9ECeC6iHqwE5ddAd9HSc9J4s/DGKO9yKh+yPw==", "title"=>"house chorse", "description"=>"chores\r\nlist", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "house chorse"], ["description", "chores\r\nlist"], ["created_at", "2021-01-12 14:07:56.681480"], ["updated_at", "2021-01-12 14:07:56.681480"]]
+  [1m[35m (4.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 9ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/posts/3" for ::1 at 2021-01-12 09:07:56 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 129ms (Views: 103.3ms | ActiveRecord: 0.3ms)
+
+
